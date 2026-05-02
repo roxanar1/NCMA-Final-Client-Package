@@ -64,11 +64,6 @@ content
 
 :::
 
-
-::: {.fragment .fade-up}
-content
-:::
-
 # Limitations
 
 ::: {.fragment .fade-up}
