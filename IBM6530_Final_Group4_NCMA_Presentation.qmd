@@ -1,0 +1,82 @@
+---
+title: "NCMA SGV"
+subtitle: "Final Client Package"
+author: "Kayla Cortez, Matthew Melgar, Jamie Min, Mehrnoosh Solgi, Roxana Rodriguez"
+date: today
+institute: "IBM 6530, Cal Poly Pomona"
+format: 
+  revealjs:
+    theme: serif
+    width: 1600
+    height: 900
+    footer: Marketing Analytics
+    transition: slide
+    transition-speed: default
+    incremental: false
+    toc: true
+    toc-depth: 1
+    slide-number: true
+    scrollable: true
+    smaller: true
+    code-fold: true
+    code-overflow: wrap
+    number-sections: false
+    number-depth: 5
+    embed-resources: true
+    css: styles.css
+editor: visual
+execute: 
+  echo: true
+  freeze: auto
+---
+
+# Problem
+
+::: {.fragment .fade-up}
+content
+:::
+
+# Data Findings
+
+::: {.columns}
+
+::: {.column width="50%"}
+![](images/Dashboard.png){width="100%"}
+
+[View Looker Studio Dashboard](https://datastudio.google.com/reporting/4666a95f-b65f-4ebd-bba3-ebf05ed9b699)
+:::
+
+::: {.column width="50%"}
+
+::: {.fragment .fade-up}
+
+**Key Findings:**
+
+- Traffic is dominated by Direct, but shows low engagement, indicating low-intent users or tracking gaps.  
+- Organic and Referral drive higher engagement, suggesting more qualified users.  
+- Traffic is heavily concentrated in Singapore, misaligned with the U.S.-based target audience.  
+- Desktop drives volume, but mobile users are more engaged.  
+- Traffic is inconsistent over time, likely driven by specific events rather than steady growth.  
+
+:::
+
+:::
+
+:::
+
+
+::: {.fragment .fade-up}
+content
+:::
+
+# Limitations
+
+::: {.fragment .fade-up}
+content
+:::
+
+# Recommendations & Next Steps
+
+::: {.fragment .fade-up}
+content
+:::

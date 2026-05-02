@@ -1,0 +1,292 @@
+---
+title: "NCMA Final Client Package"
+author: "Kayla Cortez, Matthew Melgar, Jamie Min, Mehrnoosh Solgi, Roxana Rodriguez"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 4
+    number-sections: false
+    code-line-numbers: true
+    code-link: true
+    code-fold: false
+    embed-resources: true
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+---
+
+## Deliverable 1 — Final Dashboard (Looker Studio)
+
+-   Looker Studio Dashboard Link: <https://datastudio.google.com/reporting/4666a95f-b65f-4ebd-bba3-ebf05ed9b699>
+
+    ![](images/Dashboard.png)
+
+Include:
+
+-   clean, stable BigQuery data source (mart/views)
+
+-   correct KPI logic and controls
+
+-   definitions and caveats included
+
+-   stakeholder-first layout
+
+## Deliverable 2 — Final Quarto Report (reproducible)
+
+### narrative summary of the business problem
+
+### descriptive insights (from BigQuery/mart)
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+#| include: false
+
+library(bigrquery)
+library(DBI)
+library(dbplyr)
+library(dplyr)
+library(tidyverse)
+library(purrr)
+library(slider)
+library(ggplot2)
+library(readr)
+library(scales)
+
+#Connect to BigQuery
+bq_auth(email = "roxanarodriguezquevedo@gmail.com")
+bq_user()
+
+project_id <- "ncma-cpp-spring"
+dataset_id <- "analytics_385372747"
+
+con <- dbConnect(
+  bigrquery::bigquery(),
+  project = project_id,
+  dataset = dataset_id,
+  billing = project_id
+)
+
+con
+
+#list tables
+dbListTables(con)
+
+#load mart table
+mart_tbl <- tbl(con, "mart_daily_acquisition_v1")
+mart_tbl
+
+#collect and sort mart
+mart_df <- tbl(con, "mart_daily_acquisition_v1") %>%
+  collect() %>%
+  arrange(desc(date))  
+
+#save mart files (rds and csv)
+saveRDS(mart_df, "mart_daily_acquisition_v1.rds")
+write_csv(mart_df, "mart_daily_acquisition_v1.csv")
+
+#load mart from rds or csv
+mart_df <- readRDS("mart_daily_acquisition_v1.rds")
+mart_df <- read_csv("mart_daily_acquisition_v1.csv")
+
+```
+
+```{r}
+#| label: time-trends
+summary_time <- mart_df %>%
+  group_by(date) %>%
+  summarise(
+    total_users = sum(users, na.rm = TRUE),
+    total_sessions = sum(sessions, na.rm = TRUE),
+    total_engaged_sessions = sum(engaged_sessions, na.rm = TRUE),
+    total_engagement_time = sum(engagement_time_msec, na.rm = TRUE)
+  ) %>%
+  arrange(date)
+
+summary_time
+
+ggplot(summary_time, aes(x = date, y = total_sessions)) +
+  geom_line() +
+  labs(
+    title = "Traffic Over Time",
+    x = "Date",
+    y = "Total Sessions"
+  ) +
+  theme_minimal()
+```
+
+**Descriptive Insight:**
+
+-   Traffic fluctuates significantly over time with several spikes and drops. This indicates that traffic is very inconsistent, as it doesn’t have steady growth over time but is rather volatile due to irregular user activity.
+
+-   A major peak occurred in late March, where total sessions surpassed 150 compared to prior months.
+
+-   Traffic declined sharply in early April to below 50 sessions and spiked again mid-April.
+
+```{r}
+#| label: traffic-by-channel
+summary_channel <- mart_df %>%
+  group_by(channel) %>%
+  summarise(
+    total_users = sum(users, na.rm = TRUE),
+    total_sessions = sum(sessions, na.rm = TRUE),
+    total_engaged_sessions = sum(engaged_sessions, na.rm = TRUE),
+    total_engagement_time = sum(engagement_time_msec, na.rm = TRUE)
+  ) %>%
+  arrange(desc(total_sessions))
+
+summary_channel
+
+ggplot(summary_channel, aes(x = reorder(channel, total_sessions),
+                            y = total_sessions,
+                            fill = channel)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Total Sessions by Traffic Channel",
+    x = "Channel",
+    y = "Total Sessions"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+**Descriptive Insight:**
+
+-   Most website traffic is coming from direct traffic sources, and it accounts for approximately 90% of all user traffic.
+
+-   Organic Search contributes to a very small portion of traffic with fewer than 500 sessions.
+
+-   Referrals and other sources have minimal numbers.
+
+```{r}
+#| label: traffic-by-country
+summary_country <- mart_df %>%
+  group_by(country) %>%
+  summarise(
+    total_users = sum(users, na.rm = TRUE),
+    total_sessions = sum(sessions, na.rm = TRUE),
+    total_engaged_sessions = sum(engaged_sessions, na.rm = TRUE),
+    total_engagement_time = sum(engagement_time_msec, na.rm = TRUE)
+  ) %>%
+  arrange(desc(total_sessions)) %>%
+  slice_head(n = 5)
+
+summary_country
+
+ggplot(summary_country, aes(x = reorder(country, total_sessions),
+                            y = total_sessions,
+                            fill = country)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Total Sessions by Country",
+    x = "Country",
+    y = "Total Sessions"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+**Descriptive Insight:**
+
+-   Website traffic is mainly coming from Singapore and the U.S., while China, Pakistan, and India have much smaller numbers of less than 50. 
+
+-   The audience is highly localized in the incorrect market, and this poses a bigger issue considering the primary target audience for NCMA SGV are from the US.
+
+```{r}
+#| label: traffic-by-device
+summary_device <- mart_df %>%
+  group_by(device_category) %>%
+  summarise(
+    total_users = sum(users, na.rm = TRUE),
+    total_sessions = sum(sessions, na.rm = TRUE),
+    total_engaged_sessions = sum(engaged_sessions, na.rm = TRUE),
+    total_engagement_time = sum(engagement_time_msec, na.rm = TRUE)
+  ) %>%
+  arrange(desc(total_sessions))
+
+summary_device
+
+ggplot(summary_device, aes(x = reorder(device_category, total_sessions),
+                           y = total_sessions,
+                           fill = device_category)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Total Sessions by Device Type",
+    x = "Device Type",
+    y = "Total Sessions"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+**Descriptive Insight:**
+
+-   Desktop seems to outweigh mobile users, as desktop traffic accounts for the majority of traffic sessions to the website compared to mobile users, who represent a smaller portion of the traffic.
+
+-   Since the majority of traffic comes from desktop devices, this suggests that most users access the site in more professional contexts, which aligns with NCMA’s purpose, as it primarily serves a professional audience interested in networking.
+
+```{r}
+#| label: engagement-by-channel
+summary_engagement <- mart_df %>%
+  group_by(channel) %>%
+  summarise(
+    total_sessions = sum(sessions, na.rm = TRUE),
+    total_engaged_sessions = sum(engaged_sessions, na.rm = TRUE),
+    engagement_rate = total_engaged_sessions / total_sessions,
+    total_engagement_time = sum(engagement_time_msec, na.rm = TRUE)
+  ) %>%
+  arrange(desc(engagement_rate))
+
+summary_engagement
+
+ggplot(summary_engagement, aes(x = reorder(channel, engagement_rate),
+                               y = engagement_rate,
+                               fill = channel)) +
+  geom_col() +
+  coord_flip() +
+  scale_y_continuous(labels = percent_format()) +
+  labs(
+    title = "Engagement Rate by Channel",
+    x = "Channel",
+    y = "Engagement Rate (%)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+**Descriptive Insight:**
+
+-   “Other” traffic sources shows the highest engagement, while referral and organic search have a moderate amount of engagement with 50%-60% 
+
+-   Direct traffic has the lowest engagement rate, around 5–10%, suggesting that these users are not interacting meaningfully with the website despite generating the highest volume of traffic. This audience segment may also consist largely of low-intent users.
+
+**Key Takeaway:**
+
+The website is relying heavily on direct traffic. However, this dominant source appears to be low quality in terms of engagement, while smaller channels such as organic search and referral drive more meaningful user interactions. Traffic patterns over time are also significantly inconsistent, with noticeable spikes that suggest specific event activity rather than steady growth. Additionally, the audience is primarily in Singapore, and NCMA SGV aims to attract a professionally oriented user base from the U.S
+
+### advanced analysis (attribution required)
+
+### recommendations and limitations
+
+### reproducible code and instructions
+
+## Deliverable 3 — Team Presentation (instructor-specified format)
+
+Use the Revealjs format of Quarto for presentation deck of slides. Publish it to the web for easy sharing.
+
+Include:
+
+-   concise story of the problem, what you found, what you recommend, using Deliverables 1 and 2.
+
+-   evidence (dashboard + key charts)
+
+-   limitations and next steps
+
+**Revealjs Presentation Link:**
