@@ -1076,11 +1076,13 @@ Kayla Cortez, Matthew Melgar, Jamie Min, Mehrnoosh Solgi, Roxana Rodriguez
 <h2 id="toc-title">Table of contents</h2>
 <ul>
 <li><a href="#/problem" id="/toc-problem">Problem</a></li>
+<li><a href="#/data-source" id="/toc-data-source">Data Source</a></li>
+<li><a href="#/reproducibility" id="/toc-reproducibility">Reproducibility</a></li>
 <li><a href="#/data-findings" id="/toc-data-findings">Data Findings</a></li>
 <li><a href="#/advanced-analysis---attribution" id="/toc-advanced-analysis---attribution">Advanced Analysis - Attribution</a></li>
 <li><a href="#/limitations" id="/toc-limitations">Limitations</a></li>
 <li><a href="#/recommendations-next-steps" id="/toc-recommendations-next-steps">Recommendations &amp; Next Steps</a></li>
-
+<li><a href="#/thank-you" id="/toc-thank-you">Thank You</a></li>
 </ul>
 </nav>
 </section>
@@ -1125,6 +1127,52 @@ Kayla Cortez, Matthew Melgar, Jamie Min, Mehrnoosh Solgi, Roxana Rodriguez
 <p>Today, the chapter has the data in GA4 but no consolidated picture. <strong>Our job was to turn raw GA4 data into a decision-ready story.</strong></p>
 </div>
 </section></section>
+<section id="data-source" class="title-slide slide level1 center">
+<h1>Data Source</h1>
+<div class="fragment fade-up">
+<p>Our report uses a cleaned BigQuery mart called <code>mart_daily_acquisition_v1</code>.</p>
+</div>
+<div class="fragment fade-up">
+<p>This mart organizes the GA4 data into a stable table that can be used for both the dashboard and the Quarto report.</p>
+</div>
+<div class="fragment fade-up">
+<p>The data includes:</p>
+<ul>
+<li>Date</li>
+<li>Channel</li>
+<li>Source and medium</li>
+<li>Device category</li>
+<li>Country</li>
+<li>Users</li>
+<li>Sessions</li>
+<li>Engaged sessions</li>
+<li>Engagement time</li>
+</ul>
+</div>
+</section>
+
+<section id="reproducibility" class="title-slide slide level1 center">
+<h1>Reproducibility</h1>
+<div class="fragment fade-up">
+<p>The final report was made in Quarto so the analysis can be rerun when the data is updated.</p>
+</div>
+<div class="fragment fade-up">
+<p>To reproduce the report, a user needs access to:</p>
+<ul>
+<li>The GitHub repository</li>
+<li>The BigQuery project</li>
+<li>R and Quarto</li>
+<li>The required R packages</li>
+</ul>
+</div>
+<div class="fragment fade-up">
+<p>After opening the <code>.qmd</code> file, the user can render it again to create the final HTML report.</p>
+</div>
+<div class="fragment fade-up">
+<p>This makes the report easier to update and helps keep the dashboard, analysis, and recommendations connected to the same cleaned data source.</p>
+</div>
+</section>
+
 <section id="data-findings" class="title-slide slide level1 center">
 <h1>Data Findings</h1>
 <div class="columns">
@@ -1197,8 +1245,8 @@ Kayla Cortez, Matthew Melgar, Jamie Min, Mehrnoosh Solgi, Roxana Rodriguez
 </div>
 </section>
 
-<section id="section" class="title-slide slide level1 center">
-<h1></h1>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank You</h1>
 
 </section>
     </div>

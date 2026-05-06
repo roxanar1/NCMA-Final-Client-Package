@@ -26,7 +26,7 @@ execute:
 
 ## Deliverable 2 — Final Quarto Report (reproducible)
 
-### narrative summary of the business problem
+### Narrative Summary of the Business Problem
 
 NCMA SGV is a nonprofit, membership-based professional association chapter that serves contract management professionals, students, and early-career talent across the San Gabriel Valley region. The chapter creates value through professional development events, educational programming, networking opportunities, certification support, and leadership engagement. However, as the organization seeks to grow its local community and strengthen member participation, it needs a clearer understanding of how effectively its digital presence and event strategy are attracting, engaging, and converting its target audiences.
 
@@ -36,7 +36,7 @@ To address this challenge, NCMA SGV needs to track the full user journey from ac
 
 Ultimately, the business problem centers on improving NCMA SGV’s ability to convert digital interest into measurable organizational growth. A stronger analytics framework will help the chapter understand who its audience is, how users interact with its website and events, and which strategies are most effective in building a sustainable and engaged contract management community.
 
-### descriptive insights (from BigQuery/mart)
+### Descriptive Insights (From BigQuery/Mart)
 
 ```{r}
 #| label: setup
@@ -269,7 +269,7 @@ ggplot(summary_engagement, aes(x = reorder(channel, engagement_rate),
 
 The website is relying heavily on direct traffic. However, this dominant source appears to be low quality in terms of engagement, while smaller channels such as organic search and referral drive more meaningful user interactions. Traffic patterns over time are also significantly inconsistent, with noticeable spikes that suggest specific event activity rather than steady growth. Additionally, the audience is primarily in Singapore, and NCMA SGV aims to attract a professionally oriented user base from the U.S
 
-### advanced analysis (attribution required)
+### Advanced Analysis (attribution required)
 
 ```{r}
 
@@ -292,7 +292,7 @@ attribution_summary
 
 This tibble demonstrates that Direct traffic generates the highest volume with 3,667 sessions with 5.6% engagement rate by channel. This is referencing with the Looker Studio dashboard and tibble. Organic Search (51%), Referral (56), and Other(100%, with 1 sessions and 1 engaged session) show stronger engagement rates which show that this plays a large role in the customer's journey early on. Even though, it is generating lower traffic volume. These findings show that users may discover NCMA through channels through Organic Search or Referral. With traffic going to Direct channels with low engagement suggests that the user's activity cannot be fully captured through traditional last-click reporting. This means that it can undervalue channels such as Organic Search, Referral, and Other. The data does show that they interact with channels such as direct, organic search, referral, and other. Which means that relying on last-click attribution will oversimplify how different marketing channels that can contribute the user's engagement. Our strongest engagement comes from mobile users with low traffic volume, this means it can be an important discovery touch point.
 
-#### recommendations and limitations
+### Recommendations and Limitations
 
 #### **Recommendations**
 
@@ -391,4 +391,4 @@ The report uses the BigQuery mart to make the summary tables, charts, insights, 
 
 ## Deliverable 3 — Team Presentation (instructor-specified format)
 
-**Revealjs Presentation Link:**
+**Revealjs Presentation Link: <https://roxanar1.github.io/NCMA-Final-Client-Package/>**
