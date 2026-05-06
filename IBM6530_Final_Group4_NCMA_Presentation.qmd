@@ -134,3 +134,19 @@ Today, the chapter has the data in GA4 but no consolidated picture. **Our job wa
 
 - Build a recurring review process so the dashboard becomes a decision tool, not just a reporting artifact\
 :::
+
+
+# Advanced Analysis - Attribution
+
+::: {.fragment .fade-up}
+-   We can see that direct traffic generates the highest session volume, but as for overall engagement rate is low with 5.6%
+
+-   Organic Search, Referral, and Other show stronger engagement rates which show that this plays a large role in the customer's journey early on.
+
+    -   With traffic going to Direct channels with low engagement suggests that the user's activity cannot be fully captured through traditional last-click reporting. This means that it can undervalue channels such as Organic Search, Referral, and Other.
+
+-   The data does show that they interact with channels such as direct, organic search, referral, and other. Which means that relying on last-click attribution will oversimplify how different marketing channels that can contribute the user's engagement.
+
+-   Our strongest engagement comes from mobile users with low traffic volume, this means it can be an important discovery touch point.
+:::
+
