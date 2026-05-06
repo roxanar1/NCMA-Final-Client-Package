@@ -67,11 +67,31 @@ content
 # Limitations
 
 ::: {.fragment .fade-up}
-content
+**Main caveats:**
+
+- Analysis relies on aggregated dashboard and GA4-style reporting; user-level journeys limited
+
+- Direct traffic dominates the data; may reflect real brand visits, but may also signal tracking or UTM gaps
+
+- Geographic traffic heavily concentrated outside the expected U.S.-based target audience, especially Singapore
+
+- Attribution results should be treated as directional, not exact proof of causation
+
+- Analysis window may be too short to fully capture seasonality, campaign cycles, or long-term patterns\
 :::
 
 # Recommendations & Next Steps
 
 ::: {.fragment .fade-up}
-content
+**Recommended actions:**
+
+- Strengthen tracking by standardizing UTMs, event names, and key conversion actions
+
+- Investigate the source of Singapore-heavy traffic and filter or segment it when reporting to stakeholders
+
+- Shift attention toward channels with stronger engagement, especially Organic and Referral
+
+- Use attribution reporting alongside last-click metrics to better understand assisted conversions
+
+- Build a recurring review process so the dashboard becomes a decision tool, not just a reporting artifact\
 :::
