@@ -38,6 +38,14 @@ Include:
 
 ### narrative summary of the business problem
 
+NCMA SGV is a nonprofit, membership-based professional association chapter that serves contract management professionals, students, and early-career talent across the San Gabriel Valley region. The chapter creates value through professional development events, educational programming, networking opportunities, certification support, and leadership engagement. However, as the organization seeks to grow its local community and strengthen member participation, it needs a clearer understanding of how effectively its digital presence and event strategy are attracting, engaging, and converting its target audiences.
+
+The primary business problem is that NCMA SGV must determine whether its website, social events, and digital marketing channels are successfully reaching the right audiences, especially Gen Z and early-career professionals, while also maintaining interest among established professionals in the San Gabriel Valley area. Although the organization provides valuable professional development and networking opportunities, it needs data-driven insight into whether users are discovering the website, engaging with relevant content, registering for events, subscribing to communications, and returning over time.
+
+To address this challenge, NCMA SGV needs to track the full user journey from acquisition to engagement, conversion, and retention. Key metrics such as traffic source, user demographics, landing page engagement, event registration rate, subscription conversion rate, returning users, and retention rate can help the organization evaluate which channels and experiences are driving meaningful participation. By analyzing these behaviors, NCMA SGV can identify opportunities to improve website performance, optimize event promotion, strengthen audience targeting, and increase membership subscriptions.
+
+Ultimately, the business problem centers on improving NCMA SGV’s ability to convert digital interest into measurable organizational growth. A stronger analytics framework will help the chapter understand who its audience is, how users interact with its website and events, and which strategies are most effective in building a sustainable and engaged contract management community.
+
 ### descriptive insights (from BigQuery/mart)
 
 ```{r}
