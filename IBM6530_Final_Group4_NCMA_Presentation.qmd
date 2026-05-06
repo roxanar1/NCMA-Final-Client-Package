@@ -138,7 +138,21 @@ Today, the chapter has the data in GA4 but no consolidated picture. **Our job wa
 
 # Advanced Analysis - Attribution
 
+:::{.columns}
+
+::: {.column width = "50%"}
+![](images/2.png){width="100%"fig-alt="channel engagement"}
+:::
+
+::: {.column width = "50%"}
+![](images/1.png){width="100%"fig-alt="channel engagement"}
+:::
+
+:::
+
 ::: {.fragment .fade-up}
+
+
 -   We can see that direct traffic generates the highest session volume, but as for overall engagement rate is low with 5.6%
 
 -   Organic Search, Referral, and Other show stronger engagement rates which show that this plays a large role in the customer's journey early on.
@@ -149,4 +163,5 @@ Today, the chapter has the data in GA4 but no consolidated picture. **Our job wa
 
 -   Our strongest engagement comes from mobile users with low traffic volume, this means it can be an important discovery touch point.
 :::
+
 
