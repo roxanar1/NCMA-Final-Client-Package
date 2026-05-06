@@ -281,6 +281,24 @@ The website is relying heavily on direct traffic. However, this dominant source 
 
 ### advanced analysis (attribution required)
 
+```{r}
+
+#| label: attribution-analysis
+
+attribution_summary <- mart_df |>
+  group_by(channel) |>
+  summarise(
+    total_sessions = sum(sessions, na.rm = TRUE),
+    total_engaged_sessions = sum(engaged_sessions, na.rm = TRUE),
+    engagement_rate = total_engaged_sessions / total_sessions,
+    total_engagement_time = sum(engagement_time_msec, na.rm = TRUE) / 100
+  ) |>
+  arrange(desc(total_sessions))
+
+attribution_summary
+```
+This tibble demonstrates that Direct traffic generates the highest volume with 3,667 sessions with 5.6% engagement rate by channel. This is referencing with the Looker Studio dashboard and tibble. Organic Search (51%), Referral (56), and Other(100%, with 1 sessions and 1 engaged session) show stronger engagement rates which show that this plays a large role in the customer's journey early on. Even though, it is generating lower traffic volume. These findings show that users may discover NCMA through channels through Organic Search or Referral. With traffic going to Direct channels with low engagement suggests that the user's activity cannot be fully captured through traditional last-click reporting. This means that it can undervalue channels such as Organic Search, Referral, and Other. The data does show that they interact with channels such as direct, organic search, referral, and other. Which means that relying on last-click attribution will oversimplify how different marketing channels that can contribute the user's engagement. Our strongest engagement comes from mobile users with low traffic volume, this means it can be an important discovery touch point.
+
 ### recommendations and limitations
 
 ##Recommendations
