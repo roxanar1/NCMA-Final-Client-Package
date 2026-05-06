@@ -275,6 +275,34 @@ The website is relying heavily on direct traffic. However, this dominant source 
 
 ### recommendations and limitations
 
+##Recommendations
+
+Based on the integrated analysis of acquisition channels, attribution modeling, and engagement patterns, several strategic recommendations emerge.
+
+The first step would be to reallocate the budget towards high-efficiency channels rather than high-volume channels. While certain sources such as organic or direct traffic drive substantial session volume, attributed conversion value suggests that not all traffic contributes equally to business outcomes. Paid channels demonstrating stronger conversion efficiency should receive incremental investment, particularly where marginal returns remain positive.
+
+Implementing a multi-touch attribution as a standard reporting framework would allow for observing differences between attribution outputs and last-click assumptions to highlight the risk of undervaluing upper-funnel interactions. Adopting a data driven or position based attribution model will provide a more accurate representation of the customer journey and support more well-informed media allocation decisions.
+
+The next step would be to optimize underperforming channels through targeted experimentation rather than elimination. Channels with lower attributed value may still play a supporting role in awareness or assisted conversions. Structured A/B testing on messaging, targeting, and landing page alignment can help determine whether performance gaps are due to execution rather than channel viability.
+
+It is also necessary to strengthen tracking consistency across all digital touchpoints. Ensuring standardized event naming conventions, complete parameter capture, and reliable cross-platform integration within GA4, BigQuery, and reporting layers will improve data quality and enable more precise downstream analysis.
+
+To fully implement a method towards remaining on top of KPIs, there must be an objective to develop a recurring dashboard review cadence tied to business objectives. Rather than treating reporting as static, stakeholders should evaluate channel performance on a scheduled basis, aligning insights with campaign cycles and broader marketing goals to drive continuous optimization.
+
+##Limitations
+
+The analysis relies on aggregated data from the mart table, which limits visibility into user-level behavior. Without granular session or user journey data, certain attribution patterns may be simplified, potentially masking nuanced interactions across touchpoints.
+
+Attribution modeling assumptions introduce inherent uncertainty. Even with advanced attribution approaches, no model can fully capture the complexity of real-world decision-making. As a result, attributed values should be interpreted as estimates rather than exact representations of causal impact.
+
+Discrepancies between data sources may affect consistency. Differences between GA4 interface reporting and BigQuery exports driven by factors such as data processing latency, sampling thresholds, and filtering rules can lead to minor variations in reported metrics. Tracking implementation constraints may impact data completeness. Issues such as missing UTM parameters, inconsistent tagging, consent mode restrictions, or cross-domain tracking gaps can result in underreported or misattributed interactions.
+
+Another limitation is the relatively short or static analysis window. Channel performance can vary significantly over time due to seasonality, campaign changes, or external market conditions. As such, findings should be validated against longer-term trends before making major strategic shifts.
+
+This analysis does not fully incorporate offline or external influences. Factors such as brand awareness, word-of-mouth, or offline marketing efforts may contribute to observed outcomes but are not captured within the current digital measurement framework.
+
+Taken together, these limitations suggest that the findings should be used as a strategic guide rather than a definitive prescription, and should be continuously refined as additional data becomes available.
+
 ### reproducible code and instructions
 
 ## Deliverable 3 — Team Presentation (instructor-specified format)
