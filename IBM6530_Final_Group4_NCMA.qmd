@@ -303,7 +303,72 @@ This analysis does not fully incorporate offline or external influences. Factors
 
 Taken together, these limitations suggest that the findings should be used as a strategic guide rather than a definitive prescription, and should be continuously refined as additional data becomes available.
 
-### reproducible code and instructions
+### Reproducible Code and Instructions
+
+This report can be reproduced because it uses the same cleaned data source for all of the charts and analysis. The main data source is the BigQuery table called `mart_daily_acquisition_v1`. This table is in the dataset `analytics_385372747` and the Google Cloud project `ncma-cpp-spring`.
+
+To reproduce this report, the user needs access to the GitHub repository and the BigQuery table.
+
+Required tools:
+
+- R
+- Quarto
+- Git
+- RStudio, Positron, or another Quarto editor
+- Google BigQuery access
+
+Required R packages:
+
+- `bigrquery`
+- `DBI`
+- `dbplyr`
+- `dplyr`
+- `tidyverse`
+- `purrr`
+- `slider`
+- `ggplot2`
+- `readr`
+- `scales`
+
+Steps to reproduce the report:
+
+1. Download or clone the group GitHub repo.
+2. Open the project folder in RStudio, Positron, or another Quarto editor.
+3. Open the final `.qmd` file.
+4. Sign in to the Google account that has access to the BigQuery project.
+5. Click **Render**.
+6. Check that the HTML report is created.
+7. Open the dashboard link and make sure it still works.
+
+The report uses this BigQuery code to load the cleaned mart:
+
+```{r}
+#| label: reproducible-bigquery
+#| eval: false
+
+library(bigrquery)
+library(DBI)
+library(dbplyr)
+library(dplyr)
+
+bq_auth()
+
+project_id <- "ncma-cpp-spring"
+dataset_id <- "analytics_385372747"
+
+con <- dbConnect(
+  bigrquery::bigquery(),
+  project = project_id,
+  dataset = dataset_id,
+  billing = project_id
+)
+
+mart_df <- tbl(con, "mart_daily_acquisition_v1") %>%
+  collect() %>%
+  arrange(desc(date))
+```
+
+The report uses the BigQuery mart to make the summary tables, charts, insights, and recommendations. The report should keep working as long as the BigQuery project, dataset, table name, and columns stay the same.
 
 ## Deliverable 3 — Team Presentation (instructor-specified format)
 
