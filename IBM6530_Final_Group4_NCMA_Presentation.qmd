@@ -32,8 +32,47 @@ execute:
 
 # Problem
 
+## Who is NCMA SGV?
+
 ::: {.fragment .fade-up}
-content
+NCMA SGV is a **nonprofit, membership-based professional association chapter** that serves contract management professionals, students, and early-career talent across the San Gabriel Valley.
+:::
+
+::: {.fragment .fade-up}
+The chapter creates value through **professional development events, educational programming, networking, certification support, and leadership engagement**.
+:::
+
+::: {.fragment .fade-up}
+But like many local chapters, NCMA SGV depends on a digital presence — a website, social events, and email — to find new members and keep current ones engaged.
+:::
+
+
+## The Strategic Question
+
+::: {.fragment .fade-up}
+NCMA SGV wants to **grow its local community**, especially among Gen Z and early-career professionals, while keeping established members active.
+:::
+
+::: {.fragment .fade-up}
+The chapter is doing the work — running events, sending content, maintaining a website. The question is whether that effort is **actually reaching the right audience**.
+:::
+
+::: {.fragment .fade-up}
+**The core business problem:** *Are NCMA SGV's website and digital channels successfully attracting, engaging, and converting the right people — particularly U.S. professionals in the San Gabriel Valley?*
+:::
+
+## What We Need to Measure
+
+::: {.fragment .fade-up}
+To answer that, we need visibility into the **full user journey**: acquisition → engagement → conversion → retention.
+:::
+
+::: {.fragment .fade-up}
+That means tracking traffic source, country, device, landing-page engagement, event registrations, subscription conversions, and returning users — all in one stable view.
+:::
+
+::: {.fragment .fade-up}
+Today, the chapter has the data in GA4 but no consolidated picture. **Our job was to turn raw GA4 data into a decision-ready story.**
 :::
 
 # Data Findings
