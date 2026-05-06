@@ -99,11 +99,7 @@ Today, the chapter has the data in GA4 but no consolidated picture. **Our job wa
 # Advanced Analysis - Attribution
 
 ::: columns
-::: {.column width = "50%"} ![](images/2.png){width="100%" fig-alt="channel engagement"}
-:::
-
-::: {.column width = "50%"} ![](images/1.png){width="100%" fig-alt="channel engagement"} :::
-
+![](images/Attribution-table.png){width="100%"}
 :::
 
 ::: {.fragment .fade-up}
