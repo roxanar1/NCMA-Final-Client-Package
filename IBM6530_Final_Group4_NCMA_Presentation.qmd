@@ -46,7 +46,6 @@ The chapter creates value through **professional development events, educational
 But like many local chapters, NCMA SGV depends on a digital presence — a website, social events, and email — to find new members and keep current ones engaged.
 :::
 
-
 ## The Strategic Question
 
 ::: {.fragment .fade-up}
@@ -77,82 +76,37 @@ Today, the chapter has the data in GA4 but no consolidated picture. **Our job wa
 
 # Data Findings
 
-::: {.columns}
-
+:::::: columns
 ::: {.column width="50%"}
 ![](images/Dashboard.png){width="100%"}
 
 [View Looker Studio Dashboard](https://datastudio.google.com/reporting/4666a95f-b65f-4ebd-bba3-ebf05ed9b699)
 :::
 
-::: {.column width="50%"}
-
+:::: {.column width="50%"}
 ::: {.fragment .fade-up}
-
 **Key Findings:**
 
-- Traffic is dominated by Direct, but shows low engagement, indicating low-intent users or tracking gaps.  
-- Organic and Referral drive higher engagement, suggesting more qualified users.  
-- Traffic is heavily concentrated in Singapore, misaligned with the U.S.-based target audience.  
-- Desktop drives volume, but mobile users are more engaged.  
-- Traffic is inconsistent over time, likely driven by specific events rather than steady growth.  
-
+-   Traffic is dominated by Direct, but shows low engagement, indicating low-intent users or tracking gaps.\
+-   Organic and Referral drive higher engagement, suggesting more qualified users.\
+-   Traffic is heavily concentrated in Singapore, misaligned with the U.S.-based target audience.\
+-   Desktop drives volume, but mobile users are more engaged.\
+-   Traffic is inconsistent over time, likely driven by specific events rather than steady growth.
 :::
-
-:::
-
-:::
-
-# Limitations
-
-::: {.fragment .fade-up}
-**Main caveats:**
-
-- Analysis relies on aggregated dashboard and GA4-style reporting; user-level journeys limited
-
-- Direct traffic dominates the data; may reflect real brand visits, but may also signal tracking or UTM gaps
-
-- Geographic traffic heavily concentrated outside the expected U.S.-based target audience, especially Singapore
-
-- Attribution results should be treated as directional, not exact proof of causation
-
-- Analysis window may be too short to fully capture seasonality, campaign cycles, or long-term patterns\
-:::
-
-# Recommendations & Next Steps
-
-::: {.fragment .fade-up}
-**Recommended actions:**
-
-- Strengthen tracking by standardizing UTMs, event names, and key conversion actions
-
-- Investigate the source of Singapore-heavy traffic and filter or segment it when reporting to stakeholders
-
-- Shift attention toward channels with stronger engagement, especially Organic and Referral
-
-- Use attribution reporting alongside last-click metrics to better understand assisted conversions
-
-- Build a recurring review process so the dashboard becomes a decision tool, not just a reporting artifact\
-:::
-
+::::
+::::::
 
 # Advanced Analysis - Attribution
 
-:::{.columns}
-
-::: {.column width = "50%"}
-![](images/2.png){width="100%"fig-alt="channel engagement"}
+::: columns
+::: {.column width = "50%"} ![](images/2.png){width="100%" fig-alt="channel engagement"}
 :::
 
-::: {.column width = "50%"}
-![](images/1.png){width="100%"fig-alt="channel engagement"}
-:::
+::: {.column width = "50%"} ![](images/1.png){width="100%" fig-alt="channel engagement"} :::
 
 :::
 
 ::: {.fragment .fade-up}
-
-
 -   We can see that direct traffic generates the highest session volume, but as for overall engagement rate is low with 5.6%
 
 -   Organic Search, Referral, and Other show stronger engagement rates which show that this plays a large role in the customer's journey early on.
@@ -164,4 +118,36 @@ Today, the chapter has the data in GA4 but no consolidated picture. **Our job wa
 -   Our strongest engagement comes from mobile users with low traffic volume, this means it can be an important discovery touch point.
 :::
 
+# Limitations
 
+::: {.fragment .fade-up}
+**Main caveats:**
+
+-   Analysis relies on aggregated dashboard and GA4-style reporting; user-level journeys limited
+
+-   Direct traffic dominates the data; may reflect real brand visits, but may also signal tracking or UTM gaps
+
+-   Geographic traffic heavily concentrated outside the expected U.S.-based target audience, especially Singapore
+
+-   Attribution results should be treated as directional, not exact proof of causation
+
+-   Analysis window may be too short to fully capture seasonality, campaign cycles, or long-term patterns\
+:::
+
+# Recommendations & Next Steps
+
+::: {.fragment .fade-up}
+**Recommended actions:**
+
+-   Strengthen tracking by standardizing UTMs, event names, and key conversion actions
+
+-   Investigate the source of Singapore-heavy traffic and filter or segment it when reporting to stakeholders
+
+-   Shift attention toward channels with stronger engagement, especially Organic and Referral
+
+-   Use attribution reporting alongside last-click metrics to better understand assisted conversions
+
+-   Build a recurring review process so the dashboard becomes a decision tool, not just a reporting artifact\
+:::
+
+#

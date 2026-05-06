@@ -24,16 +24,6 @@ execute:
 
     ![](images/Dashboard.png)
 
-Include:
-
--   clean, stable BigQuery data source (mart/views)
-
--   correct KPI logic and controls
-
--   definitions and caveats included
-
--   stakeholder-first layout
-
 ## Deliverable 2 — Final Quarto Report (reproducible)
 
 ### narrative summary of the business problem
@@ -297,11 +287,14 @@ attribution_summary <- mart_df |>
 
 attribution_summary
 ```
+
+**Finding:**
+
 This tibble demonstrates that Direct traffic generates the highest volume with 3,667 sessions with 5.6% engagement rate by channel. This is referencing with the Looker Studio dashboard and tibble. Organic Search (51%), Referral (56), and Other(100%, with 1 sessions and 1 engaged session) show stronger engagement rates which show that this plays a large role in the customer's journey early on. Even though, it is generating lower traffic volume. These findings show that users may discover NCMA through channels through Organic Search or Referral. With traffic going to Direct channels with low engagement suggests that the user's activity cannot be fully captured through traditional last-click reporting. This means that it can undervalue channels such as Organic Search, Referral, and Other. The data does show that they interact with channels such as direct, organic search, referral, and other. Which means that relying on last-click attribution will oversimplify how different marketing channels that can contribute the user's engagement. Our strongest engagement comes from mobile users with low traffic volume, this means it can be an important discovery touch point.
 
-### recommendations and limitations
+#### recommendations and limitations
 
-##Recommendations
+#### **Recommendations**
 
 Based on the integrated analysis of acquisition channels, attribution modeling, and engagement patterns, several strategic recommendations emerge.
 
@@ -315,7 +308,7 @@ It is also necessary to strengthen tracking consistency across all digital touch
 
 To fully implement a method towards remaining on top of KPIs, there must be an objective to develop a recurring dashboard review cadence tied to business objectives. Rather than treating reporting as static, stakeholders should evaluate channel performance on a scheduled basis, aligning insights with campaign cycles and broader marketing goals to drive continuous optimization.
 
-##Limitations
+#### **Limitations**
 
 The analysis relies on aggregated data from the mart table, which limits visibility into user-level behavior. Without granular session or user journey data, certain attribution patterns may be simplified, potentially masking nuanced interactions across touchpoints.
 
@@ -337,34 +330,34 @@ To reproduce this report, the user needs access to the GitHub repository and the
 
 Required tools:
 
-- R
-- Quarto
-- Git
-- RStudio, Positron, or another Quarto editor
-- Google BigQuery access
+-   R
+-   Quarto
+-   Git
+-   RStudio, Positron, or another Quarto editor
+-   Google BigQuery access
 
 Required R packages:
 
-- `bigrquery`
-- `DBI`
-- `dbplyr`
-- `dplyr`
-- `tidyverse`
-- `purrr`
-- `slider`
-- `ggplot2`
-- `readr`
-- `scales`
+-   `bigrquery`
+-   `DBI`
+-   `dbplyr`
+-   `dplyr`
+-   `tidyverse`
+-   `purrr`
+-   `slider`
+-   `ggplot2`
+-   `readr`
+-   `scales`
 
 Steps to reproduce the report:
 
-1. Download or clone the group GitHub repo.
-2. Open the project folder in RStudio, Positron, or another Quarto editor.
-3. Open the final `.qmd` file.
-4. Sign in to the Google account that has access to the BigQuery project.
-5. Click **Render**.
-6. Check that the HTML report is created.
-7. Open the dashboard link and make sure it still works.
+1.  Download or clone the group GitHub repo.
+2.  Open the project folder in RStudio, Positron, or another Quarto editor.
+3.  Open the final `.qmd` file.
+4.  Sign in to the Google account that has access to the BigQuery project.
+5.  Click **Render**.
+6.  Check that the HTML report is created.
+7.  Open the dashboard link and make sure it still works.
 
 The report uses this BigQuery code to load the cleaned mart:
 
@@ -397,15 +390,5 @@ mart_df <- tbl(con, "mart_daily_acquisition_v1") %>%
 The report uses the BigQuery mart to make the summary tables, charts, insights, and recommendations. The report should keep working as long as the BigQuery project, dataset, table name, and columns stay the same.
 
 ## Deliverable 3 — Team Presentation (instructor-specified format)
-
-Use the Revealjs format of Quarto for presentation deck of slides. Publish it to the web for easy sharing.
-
-Include:
-
--   concise story of the problem, what you found, what you recommend, using Deliverables 1 and 2.
-
--   evidence (dashboard + key charts)
-
--   limitations and next steps
 
 **Revealjs Presentation Link:**
