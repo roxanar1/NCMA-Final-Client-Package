@@ -75,6 +75,53 @@ That means tracking traffic source, country, device, landing-page engagement, ev
 Today, the chapter has the data in GA4 but no consolidated picture. **Our job was to turn raw GA4 data into a decision-ready story.**
 :::
 
+# Data Source
+
+::: {.fragment .fade-up}
+Our report uses a cleaned BigQuery mart called `mart_daily_acquisition_v1`.
+:::
+
+::: {.fragment .fade-up}
+This mart organizes the GA4 data into a stable table that can be used for both the dashboard and the Quarto report.
+:::
+
+::: {.fragment .fade-up}
+The data includes:
+
+- Date
+- Channel
+- Source and medium
+- Device category
+- Country
+- Users
+- Sessions
+- Engaged sessions
+- Engagement time
+:::
+
+# Reproducibility
+
+::: {.fragment .fade-up}
+The final report was made in Quarto so the analysis can be rerun when the data is updated.
+:::
+
+::: {.fragment .fade-up}
+To reproduce the report, a user needs access to:
+
+- The GitHub repository
+- The BigQuery project
+- R and Quarto
+- The required R packages
+:::
+
+::: {.fragment .fade-up}
+After opening the `.qmd` file, the user can render it again to create the final HTML report.
+:::
+
+::: {.fragment .fade-up}
+This makes the report easier to update and helps keep the dashboard, analysis, and recommendations connected to the same cleaned data source.
+:::
+
 # Data Findings
 
 ::: {.columns}
