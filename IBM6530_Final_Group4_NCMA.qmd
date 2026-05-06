@@ -392,3 +392,5 @@ The report uses the BigQuery mart to make the summary tables, charts, insights, 
 ## Deliverable 3 — Team Presentation (instructor-specified format)
 
 **Revealjs Presentation Link: <https://roxanar1.github.io/NCMA-Final-Client-Package/>**
+
+**Repo Link: <https://github.com/roxanar1/NCMA-Final-Client-Package.git>**
